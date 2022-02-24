@@ -23,3 +23,8 @@ Notes:
 - You **must** declare all test methods static. The test engine will not instantiate the test classes.
 
 ## How to create reusable test components
+
+## To do list
+
+1. Add a way to represent a partial ordering of test methods.
+2. Add utilities for testing remote services using reactive web client. 
