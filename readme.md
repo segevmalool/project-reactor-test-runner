@@ -15,8 +15,21 @@ the events in order to determine a pass/fail test result and associated result d
 
 Try running the example in `project-reactor-test-execution-examples`! 
 
+## Set up on local
+Make a `~/.m2/repository` directory, then run
+```shell
+./gradlew publishToMavenLocal
+```
+
+May require a maven install, not sure.
+
 ## How to configure the "reactor" test engine for junit platform
-1. Add the dependency on `project-reactor-junit-platform-engine`.
+1. Add the dependency on `project-reactor-junit-platform-engine`. You will also need reactor core for Flux/Mono.
+```groovy
+testImplementation 'com.segbaus:project-reactor-junit-platform-engine:${reactor-test-engine-version}'
+implementation platform('io.projectreactor:reactor-bom:${reactor-bom-version}')
+implementation 'io.projectreactor:reactor-core'
+```
 2. Mark your test classes with JUnit's `@IncludeEngines`
 ```java
 @IncludeEngine("reactor")
@@ -27,7 +40,7 @@ public class MyTestClass() {
 3. Mark your static test methods with JUnit's `@Testable`
 ```java
 @Testable
-public static Mono<Boolean> myTestMethod() {
+public static Mono<MyTestResultType> myTestMethod() {
     ...
 }
 ```
@@ -39,14 +52,6 @@ Notes:
 ## How to create reusable test components
 
 Just write classes/methods that return CorePublishers, and then compose them as you wish! ez
-
-## Set up on local
-Make a `~/.m2/repository` directory, then run
-```shell
-./gradlew publishToMavenLocal
-```
-
-May require a maven install, not sure.
 
 ## To do list
 
