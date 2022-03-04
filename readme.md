@@ -13,6 +13,8 @@ represent a serializable test result. This choice does not detract from the expr
 reactive streams, because internally, a test method may choose to use a longer Flux, then process
 the events in order to determine a pass/fail test result and associated result data.
 
+Try running the example in `project-reactor-test-execution-examples`! 
+
 ## How to configure the "reactor" test engine for junit platform
 1. Add the dependency on `project-reactor-junit-platform-engine`.
 2. Mark your test classes with JUnit's `@IncludeEngines`
@@ -52,6 +54,7 @@ May require a maven install, not sure.
 2. Add utilities for testing remote services using reactive web client (esp. ui).
 3. Add option to represent test cases using gherkin feature files and step definitions.
 4. Add an integration with JQuik for properties-based testing and test data generation.
+5. Add test parameters.
 
 ## References
 
