@@ -257,10 +257,6 @@
     "pass": true
   },
   {
-    "testResult": null,
-    "pass": true
-  },
-  {
     "testResult": true,
     "pass": true
   },
@@ -283,7 +279,7 @@
   {
     "testResult": {
       "facts": [
-        "Did you hear that? Sound frequency is measured in Hertz (Hz). The higher the Hertz, the higher-pitched the sound. Dogs hear best at 8,000 Hz, while humans hear best at around 2,000 Hz."
+        "Spiked dog collars were used to protect dogs' throats from wolf attacks in ancient Greece."
       ],
       "success": true
     },
