@@ -4,7 +4,7 @@ import org.junit.platform.engine.TestDescriptor;
 import org.junit.platform.engine.TestSource;
 import org.junit.platform.engine.TestTag;
 import org.junit.platform.engine.UniqueId;
-import reactor.core.CorePublisher;
+import reactor.core.publisher.Mono;
 
 import java.util.HashSet;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.Set;
 
 public class ProjectReactorTestDescriptor<T> implements TestDescriptor {
-  private List<CorePublisher<T>> testPublishers;
+  private List<Mono<T>> testPublishers;
 
   @Override
   public UniqueId getUniqueId() {
@@ -67,12 +67,12 @@ public class ProjectReactorTestDescriptor<T> implements TestDescriptor {
     return Optional.empty();
   }
 
-  public ProjectReactorTestDescriptor setTestPublishers(List<CorePublisher<T>> testPublishers) {
+  public ProjectReactorTestDescriptor setTestPublishers(List<Mono<T>> testPublishers) {
     this.testPublishers = testPublishers;
     return this;
   }
 
-  public List<CorePublisher<T>> getTestPublishers() {
+  public List<Mono<T>> getTestPublishers() {
     return this.testPublishers;
   }
 }
