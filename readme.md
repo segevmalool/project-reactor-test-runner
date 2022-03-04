@@ -36,6 +36,16 @@ Notes:
 
 ## How to create reusable test components
 
+Just write classes/methods that return CorePublishers, and then compose them as you wish! ez
+
+## Set up on local
+Make a `~/.m2/repository` directory, then run
+```shell
+./gradlew publishToMavenLocal
+```
+
+May require a maven install, not sure.
+
 ## To do list
 
 1. Add a way to represent a partial ordering of test methods.
