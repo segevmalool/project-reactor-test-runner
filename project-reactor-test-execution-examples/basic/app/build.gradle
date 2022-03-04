@@ -23,6 +23,9 @@ dependencies {
     implementation 'com.google.guava:guava:30.1.1-jre'
     implementation platform('io.projectreactor:reactor-bom:2020.0.16')
     implementation 'io.projectreactor:reactor-core'
+    implementation 'io.projectreactor.netty:reactor-netty-core:1.0.16'
+    implementation 'io.projectreactor.netty:reactor-netty-http:1.0.16'
+    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.74.Final:osx-aarch_64'
 
     testImplementation 'org.junit.platform:junit-platform-suite-api'
     testImplementation 'com.segbaus:project-reactor-junit-platform-engine:0.0.2'

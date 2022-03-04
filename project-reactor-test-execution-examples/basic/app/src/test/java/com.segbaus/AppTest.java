@@ -11,6 +11,7 @@ import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 @IncludeEngines("reactor")
 public class AppTest {
@@ -27,14 +28,25 @@ public class AppTest {
   }
 
   @Testable
-  public static Mono<Boolean> pass3() {
+  public static Mono<Boolean> fail1() {
     return Mono.just(true).map((q) -> {
       throw new Error("This test Failed");
     });
   }
 
   @Testable
-  public static Mono<Long> fail1() {
+  public static Mono<Long> pass3() {
     return Flux.interval(Duration.ZERO, Duration.ofMillis(1000)).take(5).last();
+  }
+
+  @Testable
+  public static Mono<HashMap<String, String>> pass4() {
+    HashMap<String, String> myTestResult = new HashMap<>();
+
+    myTestResult.put("a", "1x");
+    myTestResult.put("b", "2x");
+    myTestResult.put("c", "3x");
+
+    return Mono.just(myTestResult);
   }
 }

@@ -1,0 +1,292 @@
+[
+  {
+    "testResult": true,
+    "pass": true
+  },
+  {
+    "testResult": true,
+    "pass": true
+  },
+  {
+    "testResult": {
+      "cause": null,
+      "stackTrace": [
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "lambda$fail1$0",
+          "fileName": "AppTest.java",
+          "lineNumber": 33,
+          "className": "com.segbaus.AppTest",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "onNext",
+          "fileName": "FluxMapFuseable.java",
+          "lineNumber": 113,
+          "className": "reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "request",
+          "fileName": "Operators.java",
+          "lineNumber": 2398,
+          "className": "reactor.core.publisher.Operators$ScalarSubscription",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "request",
+          "fileName": "FluxMapFuseable.java",
+          "lineNumber": 169,
+          "className": "reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "onSubscribe",
+          "fileName": "FluxFlatMap.java",
+          "lineNumber": 964,
+          "className": "reactor.core.publisher.FluxFlatMap$FlatMapInner",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "onSubscribe",
+          "fileName": "FluxMapFuseable.java",
+          "lineNumber": 96,
+          "className": "reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "subscribe",
+          "fileName": "MonoJust.java",
+          "lineNumber": 55,
+          "className": "reactor.core.publisher.MonoJust",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "subscribe",
+          "fileName": "Mono.java",
+          "lineNumber": 4400,
+          "className": "reactor.core.publisher.Mono",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "onNext",
+          "fileName": "FluxFlatMap.java",
+          "lineNumber": 426,
+          "className": "reactor.core.publisher.FluxFlatMap$FlatMapMain",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "slowPath",
+          "fileName": "FluxIterable.java",
+          "lineNumber": 272,
+          "className": "reactor.core.publisher.FluxIterable$IterableSubscription",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "request",
+          "fileName": "FluxIterable.java",
+          "lineNumber": 230,
+          "className": "reactor.core.publisher.FluxIterable$IterableSubscription",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "onSubscribe",
+          "fileName": "FluxFlatMap.java",
+          "lineNumber": 371,
+          "className": "reactor.core.publisher.FluxFlatMap$FlatMapMain",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "subscribe",
+          "fileName": "FluxIterable.java",
+          "lineNumber": 165,
+          "className": "reactor.core.publisher.FluxIterable",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "subscribe",
+          "fileName": "FluxIterable.java",
+          "lineNumber": 87,
+          "className": "reactor.core.publisher.FluxIterable",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "subscribe",
+          "fileName": "InternalFluxOperator.java",
+          "lineNumber": 62,
+          "className": "reactor.core.publisher.InternalFluxOperator",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "run",
+          "fileName": "FluxSubscribeOn.java",
+          "lineNumber": 194,
+          "className": "reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "call",
+          "fileName": "WorkerTask.java",
+          "lineNumber": 84,
+          "className": "reactor.core.scheduler.WorkerTask",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": "app",
+          "moduleName": null,
+          "moduleVersion": null,
+          "methodName": "call",
+          "fileName": "WorkerTask.java",
+          "lineNumber": 37,
+          "className": "reactor.core.scheduler.WorkerTask",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "11.0.14",
+          "methodName": "run",
+          "fileName": "FutureTask.java",
+          "lineNumber": 264,
+          "className": "java.util.concurrent.FutureTask",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "11.0.14",
+          "methodName": "run",
+          "fileName": "ScheduledThreadPoolExecutor.java",
+          "lineNumber": 304,
+          "className": "java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "11.0.14",
+          "methodName": "runWorker",
+          "fileName": "ThreadPoolExecutor.java",
+          "lineNumber": 1128,
+          "className": "java.util.concurrent.ThreadPoolExecutor",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "11.0.14",
+          "methodName": "run",
+          "fileName": "ThreadPoolExecutor.java",
+          "lineNumber": 628,
+          "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+          "nativeMethod": false
+        },
+        {
+          "classLoaderName": null,
+          "moduleName": "java.base",
+          "moduleVersion": "11.0.14",
+          "methodName": "run",
+          "fileName": "Thread.java",
+          "lineNumber": 829,
+          "className": "java.lang.Thread",
+          "nativeMethod": false
+        }
+      ],
+      "message": "This test Failed",
+      "suppressed": [],
+      "localizedMessage": "This test Failed"
+    },
+    "pass": false
+  },
+  {
+    "testResult": {
+      "a": "1x",
+      "b": "2x",
+      "c": "3x"
+    },
+    "pass": true
+  },
+  {
+    "testResult": null,
+    "pass": true
+  },
+  {
+    "testResult": true,
+    "pass": true
+  },
+  {
+    "testResult": true,
+    "pass": true
+  },
+  {
+    "testResult": false,
+    "pass": true
+  },
+  {
+    "testResult": true,
+    "pass": true
+  },
+  {
+    "testResult": 4,
+    "pass": true
+  },
+  {
+    "testResult": {
+      "facts": [
+        "Did you hear that? Sound frequency is measured in Hertz (Hz). The higher the Hertz, the higher-pitched the sound. Dogs hear best at 8,000 Hz, while humans hear best at around 2,000 Hz."
+      ],
+      "success": true
+    },
+    "pass": true
+  }
+]
