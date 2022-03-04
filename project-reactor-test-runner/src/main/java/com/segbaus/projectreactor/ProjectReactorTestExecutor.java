@@ -54,7 +54,6 @@ public class ProjectReactorTestExecutor {
           log.fine(this.testReport.toString());
         })
         .doOnNext((Serializable testResult) -> {
-          log.info(testResult.toString());
           // Just in case the testResult is a valid json string...
           ObjectMapper mapper = new ObjectMapper();
           JsonNode testResultJson = null;
