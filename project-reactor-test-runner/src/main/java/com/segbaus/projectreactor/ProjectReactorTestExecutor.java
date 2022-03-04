@@ -1,5 +1,8 @@
 package com.segbaus.projectreactor;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -51,7 +54,18 @@ public class ProjectReactorTestExecutor {
           log.fine(this.testReport.toString());
         })
         .doOnNext((Serializable testResult) -> {
-          this.submitResults(new TestResult(testResult, true));
+          log.info(testResult.toString());
+          // Just in case the testResult is a valid json string...
+          ObjectMapper mapper = new ObjectMapper();
+          JsonNode testResultJson = null;
+          try {
+            testResultJson = mapper.readTree(testResult.toString());
+            // If the parsing works, then submit the result as jackson json node.
+            this.submitResults(new TestResult(testResultJson, true));
+          } catch (JsonProcessingException ex) {
+            // Otherwise, just submit the testResult as is.
+            this.submitResults(new TestResult(testResult, true));
+          }
         })
         .onErrorContinue((Throwable err, Object o) -> {
           this.submitResults(new TestResult(err, false));
