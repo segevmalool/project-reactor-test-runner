@@ -3,7 +3,7 @@
  */
 package com.segbaus.projectreactor.junit;
 
-import com.segbaus.projectreactor.TestExecutor;
+import com.segbaus.projectreactor.ProjectReactorTestExecutor;
 
 import org.junit.platform.commons.annotation.Testable;
 import org.junit.platform.commons.logging.Logger;
@@ -14,18 +14,14 @@ import org.junit.platform.engine.TestDescriptor;
 import org.junit.platform.engine.TestEngine;
 import org.junit.platform.engine.UniqueId;
 import org.junit.platform.engine.discovery.ClassSelector;
-import reactor.core.CorePublisher;
 import reactor.core.publisher.Mono;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 
 public class ProjectReactorTestEngine implements TestEngine {
-
-  Class TestResultType = Serializable.class;
 
   Logger log = LoggerFactory.getLogger(ProjectReactorTestEngine.class);
 
@@ -62,7 +58,7 @@ public class ProjectReactorTestEngine implements TestEngine {
 
   @Override
   public void execute(ExecutionRequest request) {
-    (new TestExecutor()).execute(
+    (new ProjectReactorTestExecutor()).execute(
         ((ProjectReactorTestDescriptor) request.getRootTestDescriptor()).getTestPublishers()
     );
   }

@@ -9,4 +9,5 @@ plugins {
 dependencies {
     implementation platform('io.projectreactor:reactor-bom:2020.0.16')
     implementation 'io.projectreactor:reactor-core'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.4'
 }
