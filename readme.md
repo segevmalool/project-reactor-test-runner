@@ -1,7 +1,7 @@
 # Execute tests concurrently using Project Reactor
 
 ## How to write tests using reactive programming
-A publisher represents a sequence of events. Each event may be processed by operators, and 
+A publisher represents a sequence of events. Each event may be processed by operators, and the sequence
 may terminate with a completion or an error.
 
 By representing test cases as publishers,
