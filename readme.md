@@ -51,6 +51,7 @@ May require a maven install, not sure.
 1. Add a way to represent a partial ordering of test methods.
 2. Add utilities for testing remote services using reactive web client (esp. ui).
 3. Add option to represent test cases using gherkin feature files and step definitions.
+4. Add an integration with JQuik for properties-based testing and test data generation.
 
 ## References
 
