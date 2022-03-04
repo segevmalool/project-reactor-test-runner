@@ -51,10 +51,10 @@ public class ProjectReactorTestExecutor {
           log.fine(this.testReport.toString());
         })
         .doOnNext((Serializable testResult) -> {
-          this.submitResults(new TestResult(testResult.toString(), true));
+          this.submitResults(new TestResult(testResult, true));
         })
         .onErrorContinue((Throwable err, Object o) -> {
-          this.submitResults(new TestResult(err.getMessage(), false));
+          this.submitResults(new TestResult(err, false));
         })
         .subscribeOn(Schedulers.parallel())
         .blockLast();
@@ -73,17 +73,18 @@ public class ProjectReactorTestExecutor {
   private void writeTestReport() throws IOException {
     log.info("Writing test results");
     ObjectMapper mapper = new ObjectMapper();
+    new File("testResult.json").createNewFile();
     mapper.writeValue(
-        new File("ctestResult.json"),
+        new File("testResult.json"),
         testReport
     );
   }
 
   private class TestResult {
-    public String testResult;
+    public Object testResult;
     public Boolean pass;
 
-    public TestResult(String testResult, Boolean pass) {
+    public TestResult(Object testResult, Boolean pass) {
       this.testResult = testResult;
       this.pass = pass;
     }
