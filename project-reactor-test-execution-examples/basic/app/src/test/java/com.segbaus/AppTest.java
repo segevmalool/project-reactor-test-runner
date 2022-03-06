@@ -3,7 +3,7 @@
  */
 package com.segbaus;
 
-import org.junit.platform.commons.annotation.Testable;
+import com.segbaus.projectreactor.junit.ReactorTest;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -17,29 +17,29 @@ import java.util.HashMap;
 public class AppTest {
   Logger log = LoggerFactory.getLogger(AppTest.class);
 
-  @Testable
+  @ReactorTest
   public static Mono<Boolean> pass1() {
     return Mono.just(true);
   }
 
-  @Testable
+  @ReactorTest
   public static Mono<Boolean> pass2() {
     return Mono.just(true);
   }
 
-  @Testable
+  @ReactorTest
   public static Mono<Boolean> fail1() {
     return Mono.just(true).map((q) -> {
       throw new Error("This test Failed");
     });
   }
 
-  @Testable
+  @ReactorTest
   public static Mono<Long> pass3() {
     return Flux.interval(Duration.ZERO, Duration.ofMillis(1000)).take(5).last();
   }
 
-  @Testable
+  @ReactorTest
   public static Mono<HashMap<String, String>> pass4() {
     HashMap<String, String> myTestResult = new HashMap<>();
 

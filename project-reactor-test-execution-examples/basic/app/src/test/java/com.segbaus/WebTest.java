@@ -1,6 +1,6 @@
 package com.segbaus;
 
-import org.junit.platform.commons.annotation.Testable;
+import com.segbaus.projectreactor.junit.ReactorTest;
 import org.junit.platform.suite.api.IncludeEngines;
 
 import reactor.core.publisher.Mono;
@@ -9,7 +9,7 @@ import reactor.netty.http.client.HttpClient;
 @IncludeEngines("reactor")
 public class WebTest {
 
-  @Testable
+  @ReactorTest
   public static Mono<String> webPass1() {
     return HttpClient.create()
         .baseUrl("io.projectreactor.netty:reactor-netty-http:1.0.17")
