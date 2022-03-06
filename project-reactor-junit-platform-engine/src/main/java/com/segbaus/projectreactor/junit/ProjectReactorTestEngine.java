@@ -23,43 +23,42 @@ import java.util.ArrayList;
 
 public class ProjectReactorTestEngine implements TestEngine {
 
-  Logger log = LoggerFactory.getLogger(ProjectReactorTestEngine.class);
+	Logger log = LoggerFactory.getLogger(ProjectReactorTestEngine.class);
 
-  @Override
-  public String getId() {
-    return "reactor";
-  }
+	@Override
+	public String getId() {
+		return "reactor";
+	}
 
-  @Override
-  public TestDescriptor discover(EngineDiscoveryRequest discoveryRequest, UniqueId uniqueId) {
+	@Override
+	public TestDescriptor discover(EngineDiscoveryRequest discoveryRequest, UniqueId uniqueId) {
 
-    ArrayList<Mono<Serializable>> testPublishers = new ArrayList<>();
+		ArrayList<Mono<Serializable>> testPublishers = new ArrayList<>();
 
-    // Get all methods annotated with @Testable organized by the test class
-    for (ClassSelector selector: discoveryRequest.getSelectorsByType(ClassSelector.class)) {
-      for (Method method: selector.getJavaClass().getDeclaredMethods()) {
-        if (!method.isAnnotationPresent(ReactorTest.class)) {
-          continue;
-        }
+		// Get all methods annotated with @Testable organized by the test class
+		for (ClassSelector selector : discoveryRequest.getSelectorsByType(ClassSelector.class)) {
+			for (Method method : selector.getJavaClass().getDeclaredMethods()) {
+				if (!method.isAnnotationPresent(ReactorTest.class)) {
+					continue;
+				}
 
-        try {
-          Mono<Serializable> testCasePublisher = (Mono<Serializable>) method.invoke(selector);
-          testPublishers.add(testCasePublisher);
-        } catch (IllegalAccessException | InvocationTargetException ex) {
-          log.error(() -> "Failed to invoke test method: " + ex.toString());
-          log.error(() -> "exiting...");
-          System.exit(1);
-        }
-      }
-    }
+				try {
+					Mono<Serializable> testCasePublisher = (Mono<Serializable>) method.invoke(selector);
+					testPublishers.add(testCasePublisher);
+				} catch (IllegalAccessException | InvocationTargetException ex) {
+					log.error(() -> "Failed to invoke test method: " + ex.toString());
+					log.error(() -> "exiting...");
+					System.exit(1);
+				}
+			}
+		}
 
-    return new ProjectReactorTestDescriptor<Serializable>().setTestPublishers(testPublishers);
-  }
+		return new ProjectReactorTestDescriptor<Serializable>().setTestPublishers(testPublishers);
+	}
 
-  @Override
-  public void execute(ExecutionRequest request) {
-    (new ProjectReactorTestExecutor()).execute(
-        ((ProjectReactorTestDescriptor) request.getRootTestDescriptor()).getTestPublishers()
-    );
-  }
+	@Override
+	public void execute(ExecutionRequest request) {
+		(new ProjectReactorTestExecutor())
+				.execute(((ProjectReactorTestDescriptor) request.getRootTestDescriptor()).getTestPublishers());
+	}
 }
