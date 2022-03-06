@@ -1,7 +1,6 @@
 package com.segbaus.projectreactor;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import reactor.core.publisher.Flux;
@@ -60,6 +59,7 @@ public class ProjectReactorTestExecutor {
           try {
             testResultJson = mapper.readTree(testResult.toString());
             // If the parsing works, then submit the result as jackson json node.
+            // This will integrate objects into the json, instead of having implicitly formatted strings.
             this.submitResults(new TestResult(testResultJson, true));
           } catch (JsonProcessingException ex) {
             // Otherwise, just submit the testResult as is.
