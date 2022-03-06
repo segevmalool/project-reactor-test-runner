@@ -38,7 +38,7 @@ public class ProjectReactorTestEngine implements TestEngine {
     // Get all methods annotated with @Testable organized by the test class
     for (ClassSelector selector: discoveryRequest.getSelectorsByType(ClassSelector.class)) {
       for (Method method: selector.getJavaClass().getDeclaredMethods()) {
-        if (!method.isAnnotationPresent(Testable.class)) {
+        if (!method.isAnnotationPresent(ReactorTest.class)) {
           continue;
         }
 
