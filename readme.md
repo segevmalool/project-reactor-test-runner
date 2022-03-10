@@ -37,9 +37,9 @@ public class MyTestClass() {
   ...
 }
 ```
-3. Mark your static test methods with JUnit's `@Testable`
+3. Mark your static test methods with `@ReactorTest`
 ```java
-@Testable
+@ReactorTest
 public static Mono<MyTestResultType> myTestMethod() {
     ...
 }
