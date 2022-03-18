@@ -31,7 +31,7 @@ tasks.named('test') {
 
 allprojects { Project project ->
     group = 'com.segbaus'
-    version = '0.0.2'
+    version = '0.0.3'
 
     println("name: ${project.name}")
 
