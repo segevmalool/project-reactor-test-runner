@@ -42,6 +42,27 @@ allprojects { Project project ->
                 artifactId = project.name
                 version = version
 
+                pom {
+                    name = 'Project Reactor Test Runner'
+                    description = 'Run tests concurrently using project reactor'
+                    url = 'https://github.com/segevmalool/project-reactor-test-runner'
+
+                    licenses {
+                        license {
+                            name='MIT License'
+                            url='https://www.mit.edu/~amini/LICENSE.md'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id = 'segevmalool'
+                            name = 'Segev Malool'
+                            email = 'segevmalool@berkeley.edu'
+                        }
+                    }
+                }
+
                 from components.java
             }
         }
