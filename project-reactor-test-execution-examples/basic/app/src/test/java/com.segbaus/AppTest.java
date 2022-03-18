@@ -10,6 +10,7 @@ import org.junit.platform.suite.api.IncludeEngines;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.util.HashMap;
 
@@ -48,5 +49,24 @@ public class AppTest {
     myTestResult.put("c", "3x");
 
     return Mono.just(myTestResult);
+  }
+
+  @ReactorTest
+  public static Mono<MyTestResults> customTestResultClass() {
+    return Mono.just(new MyTestResults());
+  }
+
+  /**
+   * For jackson to serialize a user-defined class, it must implement serializable
+   * and the instance data must be public. There may be some workaround settings.
+   */
+  public static class MyTestResults implements Serializable {
+    public Boolean pass;
+    public String myName;
+
+    public MyTestResults() {
+      this.pass = true;
+      this.myName = "Bilbo Baggins";
+    }
   }
 }

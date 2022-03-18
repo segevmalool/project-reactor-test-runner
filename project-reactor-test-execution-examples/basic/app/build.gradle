@@ -28,7 +28,7 @@ dependencies {
     implementation 'io.netty:netty-resolver-dns-native-macos:4.1.74.Final:osx-aarch_64'
 
     testImplementation 'org.junit.platform:junit-platform-suite-api'
-    testImplementation 'com.segbaus:project-reactor-junit-platform-engine:0.0.2'
+    testImplementation 'com.segbaus:project-reactor-junit-platform-engine:0.0.3-SNAPSHOT'
 }
 
 testing {
