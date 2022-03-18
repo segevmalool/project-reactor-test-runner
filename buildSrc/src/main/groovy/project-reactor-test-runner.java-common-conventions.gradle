@@ -31,11 +31,21 @@ tasks.named('test') {
 
 allprojects { Project project ->
     group = 'com.segbaus'
-    version = '0.0.3'
+    version = '0.0.3-SNAPSHOT'
 
     println("name: ${project.name}")
 
     publishing {
+        repositories {
+            maven {
+                url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+                authentication {
+                    basic(BasicAuthentication)
+                }
+                credentials(PasswordCredentials)
+            }
+        }
+
         publications {
             maven(MavenPublication) {
                 groupId = group
