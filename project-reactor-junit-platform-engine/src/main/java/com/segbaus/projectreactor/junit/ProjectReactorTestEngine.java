@@ -5,7 +5,6 @@ package com.segbaus.projectreactor.junit;
 
 import com.segbaus.projectreactor.ProjectReactorTestExecutor;
 
-import org.junit.platform.commons.annotation.Testable;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 import org.junit.platform.engine.EngineDiscoveryRequest;
